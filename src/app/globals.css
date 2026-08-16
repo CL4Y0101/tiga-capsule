@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FFFDF7;
+  --foreground: #2D3250;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  image-rendering: pixelated; 
+  /* Mencegah scrollbar muncul di layar penuh */
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFDF7; 
+}
+::-webkit-scrollbar-thumb {
+  background: #CDB4DB; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A1C8E9; 
+}
+
+/* Custom utility class untuk menyembunyikan scrollbar tapi tetap bisa scroll (untuk popup) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #CDB4DB;
+  border-radius: 4px;
+}

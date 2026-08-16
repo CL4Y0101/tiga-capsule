@@ -1,0 +1,28 @@
+{
+  "home": {
+    "title": "Some memories don't need years to build.",
+    "subtitle": "Sometimes a short time is enough.",
+    "line3": "To become something worth remembering.",
+    "enterBtn": "ENTER THE CAPSULE"
+  },
+  "world": {
+    "instruction": "Swipe & click memory objects ✦",
+    "close": "Close Capsule",
+    "loading": "Loading 3D World...",
+    "objTimeline": "Memory Trail",
+    "objGallery": "Gallery",
+    "objMessages": "Messages",
+    "objGoodbye": "Goodbye",
+    "titleTimeline": "Memory Trail",
+    "titleGallery": "Memory Gallery",
+    "titleMessages": "Public Messages"
+  },
+  "ending": {
+    "line1": "More than two weeks...",
+    "line2": "Time flew by so fast.",
+    "line3": "But it was enough to become...",
+    "line4": "A memory we will always cherish.",
+    "final": "SEE YOU AGAIN, TIM TIGA.",
+    "backBtn": "BACK TO START"
+  }
+}

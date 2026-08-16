@@ -1,0 +1,28 @@
+{
+  "home": {
+    "title": "Beberapa kenangan tidak butuh waktu bertahun-tahun.",
+    "subtitle": "Terkadang waktu yang singkat sudah cukup.",
+    "line3": "Untuk menjadi sesuatu yang pantas selalu dikenang.",
+    "enterBtn": "MASUK KE KAPSUL"
+  },
+  "world": {
+    "instruction": "Geser layar & klik objek memori ✦",
+    "close": "Tutup Kapsul",
+    "loading": "Memuat Dunia 3D...",
+    "objTimeline": "Jejak Kenangan",
+    "objGallery": "Galeri",
+    "objMessages": "Pesan Publik",
+    "objGoodbye": "Sampai Jumpa",
+    "titleTimeline": "Jejak Kenangan",
+    "titleGallery": "Galeri Memori",
+    "titleMessages": "Pesan Publik"
+  },
+  "ending": {
+    "line1": "Lebih dari dua minggu...",
+    "line2": "Waktu yang terasa begitu singkat.",
+    "line3": "Namun cukup untuk menjadi...",
+    "line4": "Kenangan yang akan selalu dijaga.",
+    "final": "SAMPAI JUMPA LAGI, TIM TIGA.",
+    "backBtn": "KEMBALI KE AWAL"
+  }
+}

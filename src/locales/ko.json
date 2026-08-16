@@ -1,0 +1,28 @@
+{
+  "home": {
+    "title": "어떤 기억들은 오랜 시간이 필요하지 않아.",
+    "subtitle": "때로는 짧은 시간만으로도 충분해.",
+    "line3": "기억할 만한 가치가 있는 무언가가 되기에는.",
+    "enterBtn": "캡슐 열기"
+  },
+  "world": {
+    "instruction": "화면을 밀어 기억을 클릭하세요 ✦",
+    "close": "캡슐 닫기",
+    "loading": "3D 세계를 불러오는 중...",
+    "objTimeline": "추억의 발자취",
+    "objGallery": "갤러리",
+    "objMessages": "메시지",
+    "objGoodbye": "작별 인사",
+    "titleTimeline": "추억의 발자취",
+    "titleGallery": "추억 갤러리",
+    "titleMessages": "공개 메시지"
+  },
+  "ending": {
+    "line1": "2주 이상의 시간...",
+    "line2": "시간이 너무 빨리 지나갔어.",
+    "line3": "하지만 충분했어...",
+    "line4": "우리가 항상 간직할 추억이 되기에.",
+    "final": "다시 만나, 팀 티가.",
+    "backBtn": "처음으로 돌아가기"
+  }
+}
