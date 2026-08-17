@@ -67,7 +67,7 @@ export default function MessagesView() {
   const [showSuccess, setShowSuccess] = useState(false);
 
   // WAJIB bernama NEXT_PUBLIC_API_URL di Cloudflare environment
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
   useEffect(() => {
     fetch(`${API_URL}/messages`)
