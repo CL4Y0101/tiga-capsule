@@ -14,7 +14,7 @@
 	},
 
 	"vars": {
-		"DB_API_URL": "https://db-tiga.fly.dev/",
+		"NEXT_PUBLIC_API_URL": "[https://db-tiga.fly.dev](https://db-tiga.fly.dev)",
 		"GROQ_CHARACTER_MODEL": "openai/gpt-oss-20b"
 	},
 
