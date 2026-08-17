@@ -49,7 +49,8 @@ const localUi = {
   }
 };
 
-type PublicMessage = { id: number; name: string; text: string; date: string };
+// FIX: Mengganti text menjadi message
+type PublicMessage = { id: number; name: string; message: string; date: string };
 
 export default function MessagesView() {
   const { setActiveView, language } = useAppStore();
@@ -65,7 +66,6 @@ export default function MessagesView() {
   const [isSending, setIsSending] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
-  // 1. Ambil data pesan dengan URL HARCODE langsung ke Fly.io
   useEffect(() => {
     fetch('https://db-tiga.fly.dev/messages')
       .then((res) => res.json())
@@ -88,7 +88,6 @@ export default function MessagesView() {
     gsap.to(containerRef.current, { opacity: 0, scale: 0.95, y: 20, duration: 0.3, ease: "power2.in", onComplete: () => setActiveView("3d") });
   };
 
-  // 2. Kirim pesan dengan URL HARDCODE langsung ke Fly.io
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !message.trim()) return;
@@ -201,7 +200,8 @@ export default function MessagesView() {
               {messages.map((msg) => (
                 <div key={msg.id} className="bg-white p-4 rounded-2xl border-2 border-capsule-navy shadow-pixel-sm hover:-translate-y-1 transition-transform">
                   <p className="text-capsule-navy text-sm font-medium leading-relaxed mb-4">
-                    "{msg.text}"
+                    {/* FIX: Mengganti msg.text menjadi msg.message */}
+                    "{msg.message}"
                   </p>
                   <div className="flex justify-between items-center text-xs font-bold text-capsule-purple">
                     <span>— {msg.name}</span>
