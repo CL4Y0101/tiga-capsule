@@ -10,9 +10,6 @@ import koLoc from "../../locales/ko.json";
 
 const translations = { id: idLoc, en: enLoc, ko: koLoc };
 
-type PublicMessage = { id: number; name: string; text: string; date: string };
-
-// Kamus lokal khusus untuk UI Messages agar bisa 3 bahasa
 const localUi = {
   id: {
     subtitle: "Tinggalkan pesan untuk Tim Tiga. Tidak perlu mendaftar! 💌",
@@ -52,13 +49,15 @@ const localUi = {
   }
 };
 
+type PublicMessage = { id: number; name: string; text: string; date: string };
+
 export default function MessagesView() {
   const { setActiveView, language } = useAppStore();
   const containerRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
   
   const t = translations[language].world;
-  const ui = localUi[language]; // Gunakan bahasa yang aktif
+  const ui = localUi[language];
   
   const [messages, setMessages] = useState<PublicMessage[]>([]);
   const [name, setName] = useState("");
@@ -66,11 +65,9 @@ export default function MessagesView() {
   const [isSending, setIsSending] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
-  // WAJIB bernama NEXT_PUBLIC_API_URL di Cloudflare environment
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
+  // 1. Ambil data pesan dengan URL HARCODE langsung ke Fly.io
   useEffect(() => {
-    fetch(`${API_URL}/messages`)
+    fetch('https://db-tiga.fly.dev/messages')
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {
@@ -78,7 +75,7 @@ export default function MessagesView() {
         }
       })
       .catch((err) => console.error("Gagal memuat pesan dari server:", err));
-  }, [API_URL]);
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -91,6 +88,7 @@ export default function MessagesView() {
     gsap.to(containerRef.current, { opacity: 0, scale: 0.95, y: 20, duration: 0.3, ease: "power2.in", onComplete: () => setActiveView("3d") });
   };
 
+  // 2. Kirim pesan dengan URL HARDCODE langsung ke Fly.io
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !message.trim()) return;
@@ -101,7 +99,7 @@ export default function MessagesView() {
       y: -50, opacity: 0, scale: 0.8, duration: 0.6, ease: "power2.in",
       onComplete: async () => {
         try {
-          const res = await fetch(`${API_URL}/messages`, {
+          const res = await fetch('https://db-tiga.fly.dev/messages', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, message })
